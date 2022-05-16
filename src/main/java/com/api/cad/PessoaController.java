@@ -21,7 +21,7 @@ public class PessoaController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Optional<Pessoa>> buscarPorId(@PathVariable Long id){
-        Optional<Pessoa> pessoa = pessoaService.buscarPorId(id);
+        Optional<Pessoa> pessoa = Optional.ofNullable(pessoaService.buscarPorId(id));
         return  pessoa.isPresent() ? ResponseEntity.ok(pessoa) : ResponseEntity.notFound().build();
     }
 
