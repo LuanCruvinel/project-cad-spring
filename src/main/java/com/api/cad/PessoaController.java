@@ -23,6 +23,8 @@ public class PessoaController {
     public ResponseEntity<Optional<Pessoa>> buscarPorId(@PathVariable Long id){
         Optional<Pessoa> pessoa = Optional.ofNullable(pessoaService.buscarPorId(id));
         return  pessoa.isPresent() ? ResponseEntity.ok(pessoa) : ResponseEntity.notFound().build();
+
+        // testando git
     }
 
 
